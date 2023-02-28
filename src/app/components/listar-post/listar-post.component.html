@@ -1,0 +1,17 @@
+<div *ngIf="posts$ | async as posts; else noPostFound">
+  <div class="card mt-2" *ngFor="let post of posts">
+    <div class="card-body">
+      <h6>{{ post.nombre }}</h6>
+      <em>{{ post.descripcion }}</em>
+      <div class="d-grid gap-2 mt-2">
+        <button class="btn btn-danger" (click)="eliminarPost(post.id)">
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noPostFound>
+  <p>No hay posts para mostrar</p>
+</ng-template>

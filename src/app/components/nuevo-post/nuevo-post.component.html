@@ -1,0 +1,15 @@
+<input
+  type="text"
+  class="form-control form-control-lg"
+  placeholder="Ingrese el nombre"
+  [(ngModel)]="nombre"
+/>
+
+<textarea
+  class="form-control form-control-lg mt-3"
+  placeholder="Ingrese descripcion"
+  [(ngModel)]="descripcion"
+></textarea>
+<div class="d-grid gap-2">
+  <button class="btn btn-success mt-3" (click)="agregarPost()">Agregar</button>
+</div>
