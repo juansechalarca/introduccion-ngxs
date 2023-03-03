@@ -31,7 +31,7 @@
       (click)="agregarPost()"
       [disabled]="postForm.invalid"
     >
-      Agregar
+      {{ post.id ? "Actualizar" : "Agregar" }}
     </button>
   </div>
 </form>

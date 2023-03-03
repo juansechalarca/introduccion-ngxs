@@ -16,7 +16,7 @@ export class NuevoPostComponent {
   private toastr = inject(ToastrService);
   private store = inject(Store);
 
-  private post!: Post;
+  post!: Post;
 
   postForm = this.formBuilder.group({
     nombre: ['', Validators.required],
