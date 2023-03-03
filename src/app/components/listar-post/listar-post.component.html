@@ -3,8 +3,9 @@
     <div class="card-body">
       <h6>{{ post.nombre }}</h6>
       <em>{{ post.descripcion }}</em>
-      <div class="d-grid gap-2 mt-2">
-        <button class="btn btn-danger" (click)="eliminarPost(post.id)">
+      <div class="mt-2">
+        <button class="btn btn-info" (click)="editarPost(post)">Editar</button>
+        <button class="btn btn-danger ms-1" (click)="eliminarPost(post.id)">
           Eliminar
         </button>
       </div>

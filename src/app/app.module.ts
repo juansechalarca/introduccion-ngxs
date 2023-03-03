@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -8,6 +8,8 @@ import { NuevoPostComponent } from './components/nuevo-post/nuevo-post.component
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { NgxsModule } from '@ngxs/store';
 import { ToastrModule } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
@@ -19,10 +21,13 @@ import { PostState } from './components/store/post.state';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgxsModule.forRoot([PostState], {
       developmentMode: !environment.production,
     }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     //NgxsLoggerPluginModule.forRoot(),
     // NgxsReduxDevtoolsPluginModule.forRoot()
   ],
